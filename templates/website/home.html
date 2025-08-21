@@ -1,0 +1,1172 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Aphelion Cyber Security - Advanced Protection for Enterprises{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 overflow-hidden">
+    <div class="absolute inset-0 bg-cyber-pattern opacity-30"></div>
+    <div class="absolute right-0 top-0 w-96 h-96 bg-[#7839e9]/10 rounded-full blur-3xl"></div>
+    <div class="absolute left-0 bottom-0 w-64 h-64 bg-[#7839e9]/10 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="mb-6 hero-badge">
+                    <span class="bg-[#7839e9]/20 text-[#7839e9] px-4 py-2 rounded-full text-sm font-medium inline-block">
+                        🔒 Enterprise Security Solutions
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-6 hero-title">
+                    Secure Your Digital Future with 
+                    <span class="text-gradient bg-gradient-to-r from-[#7839e9] to-[#8b5cf6] bg-clip-text text-transparent hero-brand">
+                        Aphelion Cyber
+                    </span>
+                </h1>
+                
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 hero-description">
+                    Advanced AI-powered cybersecurity platform that detects, prevents, and responds to threats in real-time. Protect your organization with enterprise-grade security solutions.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 hero-buttons">
+                    <a href="{% url 'contact' %}" class="bg-[#7839e9] hover:bg-[#6328d6] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-[#7839e9]/30 text-center transform hover:scale-105 hero-btn-primary">
+                        Get Started Free
+                    </a>
+                    <a href="{% url 'solutions' %}" class="bg-transparent hover:bg-[#1e293b] border-2 border-[#7839e9] text-[#7839e9] hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-center hero-btn-secondary">
+                        View Solutions
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto lg:mx-0 hero-stats">
+                    <div class="text-center lg:text-left hero-stat">
+                        <div class="text-3xl font-bold text-[#7839e9] mb-2">99.9%</div>
+                        <div class="text-sm text-gray-400">Threat Detection</div>
+                    </div>
+                    <div class="text-center lg:text-left hero-stat">
+                        <div class="text-3xl font-bold text-[#7839e9] mb-2">24/7</div>
+                        <div class="text-sm text-gray-400">Monitoring</div>
+                    </div>
+                    <div class="text-center lg:text-left hero-stat">
+                        <div class="text-3xl font-bold text-[#7839e9] mb-2">500+</div>
+                        <div class="text-sm text-gray-400">Enterprises</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative hero-dashboard">
+                <!-- Morphing SVG Animation -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <svg width="300" height="300" viewBox="0 0 300 300" class="morphing-svg">
+                        <!-- Background gradient -->
+                        <defs>
+                            <linearGradient id="cyberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#7839e9;stop-opacity:0.3" />
+                                <stop offset="50%" style="stop-color:#00f7ff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#7839e9;stop-opacity:0.1" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/> 
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Primary morphing polygon -->
+                        <polygon id="morph-path-1" 
+                                fill="url(#cyberGradient)" 
+                                stroke="#7839e9" 
+                                stroke-width="2" 
+                                filter="url(#glow)"
+                                points="150,30 250,80 230,180 150,230 70,180 50,80">
+                        </polygon>
+                        
+                        <!-- Target polygon (hidden) -->
+                        <polygon id="morph-path-2" 
+                                fill="none" 
+                                stroke="none"
+                                points="150,50 200,100 180,150 150,200 120,150 100,100">
+                        </polygon>
+                        
+                        <!-- Central security icon -->
+                        <g class="security-icon" transform="translate(150,150)">
+                            <circle r="25" fill="#7839e9" opacity="0.8"/>
+                            <path d="M-15,-10 L0,-20 L15,-10 L15,10 Q15,20 0,20 Q-15,20 -15,10 Z" 
+                                  fill="white" opacity="0.9"/>
+                            <circle r="8" fill="none" stroke="white" stroke-width="2" cy="-5"/>
+                            <rect x="-3" y="0" width="6" height="8" fill="white" rx="1"/>
+                        </g>
+                        
+                        <!-- Floating data particles -->
+                        <g class="data-particles">
+                            <circle r="2" fill="#00f7ff" opacity="0.8">
+                                <animateTransform attributeName="transform" 
+                                                type="translate" 
+                                                values="50,50; 250,100; 200,250; 50,200; 50,50"
+                                                dur="8s" 
+                                                repeatCount="indefinite"/>
+                            </circle>
+                            <circle r="1.5" fill="#7839e9" opacity="0.6">
+                                <animateTransform attributeName="transform" 
+                                                type="translate" 
+                                                values="250,80; 50,150; 150,250; 250,150; 250,80"
+                                                dur="10s" 
+                                                repeatCount="indefinite"/>
+                            </circle>
+                            <circle r="1" fill="#00f7ff" opacity="0.7">
+                                <animateTransform attributeName="transform" 
+                                                type="translate" 
+                                                values="100,80; 200,200; 80,220; 180,60; 100,80"
+                                                dur="6s" 
+                                                repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Network connections -->
+                        <g class="network-lines" stroke="#7839e9" stroke-width="1" opacity="0.4">
+                            <line x1="150" y1="150" x2="50" y2="50">
+                                <animate attributeName="opacity" values="0.1;0.6;0.1" dur="3s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="150" y1="150" x2="250" y2="100">
+                                <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="150" y1="150" x2="200" y2="250">
+                                <animate attributeName="opacity" values="0.1;0.6;0.1" dur="5s" repeatCount="indefinite"/>
+                            </line>
+                        </g>
+                    </svg>
+                </div>
+                
+                <!-- Main Security Dashboard -->
+                <div class="relative bg-[#1e293b]/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-2xl dashboard-card z-10"></div>
+                    <!-- Header -->
+                    <div class="flex items-center justify-between mb-6 dashboard-header">
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse status-dot"></div>
+                            <span class="text-white font-semibold">Security Dashboard</span>
+                        </div>
+                        <div class="text-sm text-gray-400">Live Status</div>
+                    </div>
+                    
+                    <!-- Central Shield -->
+                    <div class="flex justify-center mb-8 shield-container">
+                        <div class="relative">
+                            <svg class="w-32 h-32 text-[#7839e9] animate-pulse shield-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L3 7v9c0 5 9 8 9 8s9-3 9-8V7l-9-5z"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white font-bold text-lg shield-text">SECURE</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Metrics -->
+                    <div class="grid grid-cols-2 gap-4 mb-6 security-metrics">
+                        <div class="bg-[#0f172a]/50 p-4 rounded-lg border border-gray-700 metric-card">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="ri-shield-check-line text-green-400"></i>
+                                <span class="text-sm text-gray-400">Threats Blocked</span>
+                            </div>
+                            <div class="text-2xl font-bold text-white metric-number">1,247</div>
+                        </div>
+                        
+                        <div class="bg-[#0f172a]/50 p-4 rounded-lg border border-gray-700 metric-card">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="ri-eye-line text-blue-400"></i>
+                                <span class="text-sm text-gray-400">Active Scans</span>
+                            </div>
+                            <div class="text-2xl font-bold text-white metric-number">24</div>
+                        </div>
+                        
+                        <div class="bg-[#0f172a]/50 p-4 rounded-lg border border-gray-700 metric-card">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="ri-time-line text-yellow-400"></i>
+                                <span class="text-sm text-gray-400">Response Time</span>
+                            </div>
+                            <div class="text-2xl font-bold text-white metric-number">0.3s</div>
+                        </div>
+                        
+                        <div class="bg-[#0f172a]/50 p-4 rounded-lg border border-gray-700 metric-card">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="ri-check-line text-purple-400"></i>
+                                <span class="text-sm text-gray-400">Compliance</span>
+                            </div>
+                            <div class="text-2xl font-bold text-white metric-number">100%</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Indicators -->
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Firewall Status</span>
+                            <span class="text-green-400 flex items-center gap-1">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                Active
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Intrusion Detection</span>
+                            <span class="text-green-400 flex items-center gap-1">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                Monitoring
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-400">Data Encryption</span>
+                            <span class="text-green-400 flex items-center gap-1">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                Enabled
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating Elements -->
+                <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#7839e9]/20 rounded-full blur-xl animate-pulse"></div>
+                <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-[#7839e9]/10 rounded-full blur-2xl"></div>
+            </div>
+        </div>
+        
+        <!-- Trusted By Section -->
+        <div class="mt-16 text-center">
+            <p class="text-sm text-gray-400 mb-6">Trusted by industry leaders worldwide</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div class="px-4 py-2 bg-gray-800/50 rounded-lg text-gray-400 text-sm">Fortune 500</div>
+                <div class="px-4 py-2 bg-gray-800/50 rounded-lg text-gray-400 text-sm">Healthcare</div>
+                <div class="px-4 py-2 bg-gray-800/50 rounded-lg text-gray-400 text-sm">Financial</div>
+                <div class="px-4 py-2 bg-gray-800/50 rounded-lg text-gray-400 text-sm">Government</div>
+                <div class="px-4 py-2 bg-gray-800/50 rounded-lg text-gray-400 text-sm">Education</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cybersecurity Roles Section -->
+<section class="py-20 bg-[#7839e9]">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Cybersecurity Professional Roles</h2>
+            <p class="text-lg text-gray-300">Our all-in-one platform provides the tools and insights you need to protect your organization from evolving cyber threats.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cyber Security Consultants -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-shield-check-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Cyber Security Consultants</h3>
+                <p class="text-gray-300 mb-6">Provide expert guidance on security strategy, architecture design, and implementation best practices for enterprise environments.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Audit and Compliance Managers -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-file-lock-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Audit and Compliance Managers</h3>
+                <p class="text-gray-300 mb-6">Streamline your compliance efforts with automated assessments and comprehensive reporting tools for regulatory requirements.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Incident Response Analysts -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-alarm-warning-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Incident Response Analysts</h3>
+                <p class="text-gray-300 mb-6">Rapidly identify, analyze, and respond to security incidents with advanced threat detection and automated response capabilities.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Cloud Security Engineers -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-cloud-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Cloud Security Engineers</h3>
+                <p class="text-gray-300 mb-6">Secure cloud infrastructure and services with specialized tools for AWS, Azure, and GCP environments with automated monitoring.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Network Security Engineers -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-wifi-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Network Security Engineers</h3>
+                <p class="text-gray-300 mb-6">Implement network security controls, firewalls, and intrusion detection systems with comprehensive network monitoring tools.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- GRC Specialist -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-government-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">GRC Specialist</h3>
+                <p class="text-gray-300 mb-6">Manage governance, risk, and compliance frameworks with integrated assessment tools and risk management dashboards.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Security Solutions Consultant -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-user-settings-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Security Solutions Consultant</h3>
+                <p class="text-gray-300 mb-6">Design and implement comprehensive security solutions tailored to organizational needs with advanced architecture planning.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- SOC Operations Engineer -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-24-hours-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">SOC Operations Engineer</h3>
+                <p class="text-gray-300 mb-6">Operate security operations centers with 24/7 monitoring, threat hunting, and rapid incident response capabilities.</p>
+                <a href="#" class="flex items-center text-[#7839e9] font-medium hover:text-[#8b5cf6] transition-colors">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Platform Overview Section -->
+<section class="py-20">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <div class="mb-8">
+                    <span class="bg-[#7839e9]/20 text-[#7839e9] px-4 py-1 rounded-full text-sm font-medium">Our Platform</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Unified Security Management</h2>
+                <p class="text-lg text-gray-300 mb-6">
+                    Aphelion Cyber provides a single pane of glass for all your security needs, eliminating tool sprawl and reducing complexity.
+                </p>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#7839e9]/20 flex items-center justify-center mr-3 mt-1">
+                            <i class="ri-check-line text-[#7839e9]"></i>
+                        </div>
+                        <p class="text-gray-300">Centralized dashboard with real-time threat intelligence</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#7839e9]/20 flex items-center justify-center mr-3 mt-1">
+                            <i class="ri-check-line text-[#7839e9]"></i>
+                        </div>
+                        <p class="text-gray-300">Automated vulnerability scanning and patch management</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#7839e9]/20 flex items-center justify-center mr-3 mt-1">
+                            <i class="ri-check-line text-[#7839e9]"></i>
+                        </div>
+                        <p class="text-gray-300">Integrated compliance frameworks for regulatory requirements</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#7839e9]/20 flex items-center justify-center mr-3 mt-1">
+                            <i class="ri-check-line text-[#7839e9]"></i>
+                        </div>
+                        <p class="text-gray-300">Advanced machine learning for anomaly detection</p>
+                    </li>
+                </ul>
+                
+                <a href="{% url 'company' %}" class="inline-flex items-center bg-[#7839e9] hover:bg-[#7839e9] text-white font-medium px-6 py-3 rounded-lg transition-colors">
+                    Learn More About Our Platform
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="order-1 lg:order-2 relative">
+
+                <div class="orbital-container">
+                    <div class="center-icon">
+                        <i class="ri-shield-line text-white text-3xl"></i>
+                    </div>
+                    
+                    <div class="orbit orbit-1">
+                        <div class="orbital-icon" style="top: 0; left: 50%; transform: translate(-50%, -50%);">
+                            <i class="ri-lock-line"></i>
+                        </div>
+                        <div class="orbital-icon" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);">
+                            <i class="ri-database-2-line"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="orbit orbit-2">
+                        <div class="orbital-icon" style="top: 50%; right: 0; transform: translate(50%, -50%);">
+                            <i class="ri-cloud-line"></i>
+                        </div>
+                        <div class="orbital-icon" style="top: 50%; left: 0; transform: translate(-50%, -50%);">
+                            <i class="ri-code-line"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="orbit orbit-3">
+                        <div class="orbital-icon" style="top: 15%; right: 15%;">
+                            <i class="ri-radar-line"></i>
+                        </div>
+                        <div class="orbital-icon" style="bottom: 15%; left: 15%;">
+                            <i class="ri-shield-keyhole-line"></i>
+                        </div>
+                    </div>
+                
+                    <div class="feature-label" style="top: 20%; right: 0;">
+                        Proactive Defense
+                    </div>
+                </div>
+                <div class="absolute -bottom-4 -right-4 w-40 h-40 bg-[#6366f1]/20 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-20 bg-[#7839e9] relative">
+    <div class="absolute inset-0 bg-cyber-pattern opacity-10"></div>
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="bg-[#7839e9]/20 text-[#7839e9] px-4 py-1 rounded-full text-sm font-medium mb-6 inline-block">Testimonials</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Trusted by Security Leaders</h2>
+            <p class="text-lg text-gray-300">Hear what our customers have to say about how Aphelion Cyber has transformed their security posture.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-[#7839e9]">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+                <blockquote class="text-gray-300 mb-6">
+                    "Aphelion Cyber has transformed our security operations. We now have complete visibility into our threat landscape and can respond to incidents in minutes, not hours."
+                </blockquote>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-xl font-bold text-white mr-4">
+                        JD
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Jane Doe</h4>
+                        <p class="text-sm text-gray-400">CISO, Enterprise Corp</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-[#7839e9]">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+                <blockquote class="text-gray-300 mb-6">
+                    "The compliance management features alone have saved us countless hours of manual work. But the real value is in the comprehensive threat protection."
+                </blockquote>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-xl font-bold text-white mr-4">
+                        MS
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Michael Smith</h4>
+                        <p class="text-sm text-gray-400">Director of IT, HealthSecure Inc</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-[#0f0f0f] p-8 rounded-xl border border-gray-800 card-hover">
+                <div class="flex items-center mb-6">
+                    <div class="text-[#7839e9]">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+                <blockquote class="text-gray-300 mb-6">
+                    "After implementing Aphelion Cyber, we've seen a 78% reduction in security incidents and dramatically improved our mean time to remediate."
+                </blockquote>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center text-xl font-bold text-white mr-4">
+                        AJ
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Alex Johnson</h4>
+                        <p class="text-sm text-gray-400">Security Lead, FinTech Global</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Security Solutions Section -->
+<section class="py-20">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="bg-[#7839e9]/20 text-[#7839e9] px-4 py-1 rounded-full text-sm font-medium mb-6 inline-block">Solutions</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Tailored Security Solutions</h2>
+            <p class="text-lg text-gray-300">We provide specialized security solutions for industries with unique compliance requirements and threat landscapes.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Solution 1 -->
+            <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-800 overflow-hidden relative card-hover">
+                <!-- A healthcare security graphic with medical data protection -->
+                <img 
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300&q=80" 
+                    alt="Healthcare Cybersecurity" 
+                    class="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 class="text-2xl font-bold mb-4">Healthcare Security</h3>
+                <p class="text-gray-300 mb-6">
+                    Protect patient data and ensure HIPAA compliance with our specialized healthcare security solutions.
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-[#7839e9] mr-2 mt-1"></i>
+                        <span class="text-gray-300">HIPAA compliance automation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-[#7839e9] mr-2 mt-1"></i>
+                        <span class="text-gray-300">Medical device security</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-[#7839e9] mr-2 mt-1"></i>
+                        <span class="text-gray-300">PHI data protection</span>
+                    </li>
+                </ul>
+                <a href="{% url 'solutions' %}" class="inline-flex items-center text-[#7839e9] hover:text-[#8b5cf6] transition-colors font-medium">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Solution 2 -->
+            <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-800 overflow-hidden relative card-hover">
+                <!-- A financial security graphic with digital fraud protection -->
+                <img 
+                    src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300&q=80" 
+                    alt="Financial Services Cybersecurity" 
+                    class="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3 class="text-2xl font-bold mb-4">Financial Services</h3>
+                <p class="text-gray-300 mb-6">
+                    Secure financial data and transactions with advanced threat detection and regulatory compliance.
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-[#7839e9] mr-2 mt-1"></i>
+                        <span class="text-gray-300">PCI DSS compliance</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-[#7839e9] mr-2 mt-1"></i>
+                        <span class="text-gray-300">Fraud detection & prevention</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="ri-check-line text-[#7839e9] mr-2 mt-1"></i>
+                        <span class="text-gray-300">Zero trust implementation</span>
+                    </li>
+                </ul>
+                <a href="{% url 'solutions' %}" class="inline-flex items-center text-[#7839e9] hover:text-[#8b5cf6] transition-colors font-medium">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Solution 3 -->
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-government-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Government</h3>
+                <p class="text-gray-300 mb-6">
+                    Specialized security for government agencies with FedRAMP compliance and advanced threat protection.
+                </p>
+                <a href="{% url 'solutions' %}" class="inline-flex items-center text-[#7839e9] hover:text-[#8b5cf6] transition-colors font-medium">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Solution 4 -->
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-store-2-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Retail</h3>
+                <p class="text-gray-300 mb-6">
+                    Protect customer data and point-of-sale systems with dedicated retail security solutions.
+                </p>
+                <a href="{% url 'solutions' %}" class="inline-flex items-center text-[#7839e9] hover:text-[#8b5cf6] transition-colors font-medium">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Solution 5 -->
+            <div class="bg-[#1e293b] p-6 rounded-xl border border-gray-800 card-hover">
+                <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mb-6">
+                    <i class="ri-building-line text-2xl text-[#7839e9]"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Enterprise</h3>
+                <p class="text-gray-300 mb-6">
+                    Comprehensive security management for large organizations with complex infrastructure needs.
+                </p>
+                <a href="{% url 'solutions' %}" class="inline-flex items-center text-[#7839e9] hover:text-[#8b5cf6] transition-colors font-medium">
+                    Learn more
+                    <i class="ri-arrow-right-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-cyber relative">
+    <div class="absolute inset-0 bg-cyber-pattern opacity-10"></div>
+    <div class="absolute right-0 bottom-0 w-64 h-64 bg-[#7839e9]/10 rounded-full blur-3xl"></div>
+    <div class="absolute left-0 top-0 w-64 h-64 bg-[#7839e9]/10 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                Ready to Strengthen Your Security Posture?
+            </h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Schedule a demo today to see how Aphelion Cyber can transform your organization's security operations.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="{% url 'contact' %}" class="bg-[#7839e9] hover:bg-[#7839e9] text-white font-medium px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-[#7839e9]/20 text-center text-lg">
+                    Request a Demo
+                </a>
+                <a href="{% url 'contact' %}" class="bg-[#0f0f0f] hover:bg-[#1e293b] border border-gray-700 text-white font-medium px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-[#0f0f0f]/20 text-center text-lg">
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-20" id="contact">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <span class="bg-[#7839e9]/20 text-[#7839e9] px-4 py-1 rounded-full text-sm font-medium mb-6 inline-block">Get in Touch</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Discuss Your Security Needs</h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    Our security experts are ready to help you assess your security posture and identify the right solutions for your organization.
+                </p>
+                
+                <div class="space-y-6 mb-8">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="ri-mail-line text-2xl text-[#7839e9]"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-1">Email</h3>
+                            <p class="text-gray-300">contact@aphelioncyber.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="ri-phone-line text-2xl text-[#7839e9]"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-1">Phone</h3>
+                            <p class="text-gray-300">+1 (888) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-[#7839e9]/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="ri-map-pin-line text-2xl text-[#7839e9]"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-1">Office</h3>
+                            <p class="text-gray-300">123 Security Blvd, Cyber City, CA 94103</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-[#1e293b] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                        <i class="ri-linkedin-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-[#1e293b] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                        <i class="ri-twitter-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-[#1e293b] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                        <i class="ri-facebook-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-[#1e293b] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                        <i class="ri-github-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-[#1e293b] p-8 rounded-xl border border-gray-800">
+                <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+                {% if messages %}
+                    <div class="bg-[#7839e9]/20 p-6 rounded-lg text-center">
+                        <i class="ri-check-line text-4xl text-[#7839e9] mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">Thank You!</h4>
+                        {% for message in messages %}
+                            <p class="text-gray-300">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <form method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    id="id_name" 
+                                    placeholder="Full Name" 
+                                    class="bg-[#0f0f0f] border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#7839e9] focus:border-[#7839e9] w-full p-3 text-white"
+                                    required
+                                >
+                            </div>
+                            <div>
+                                <input 
+                                    type="tel" 
+                                    name="phone" 
+                                    id="id_phone" 
+                                    placeholder="Phone Number" 
+                                    class="bg-[#0f0f0f] border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#7839e9] focus:border-[#7839e9] w-full p-3 text-white"
+                                >
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="id_email" 
+                                placeholder="Work Email" 
+                                class="bg-[#0f0f0f] border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#7839e9] focus:border-[#7839e9] w-full p-3 text-white"
+                                required
+                            >
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <select 
+                                    name="industry" 
+                                    id="id_industry" 
+                                    class="bg-[#0f0f0f] border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#7839e9] focus:border-[#7839e9] w-full p-3 text-white"
+                                >
+                                    <option value="">Industry</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="financial">Financial Services</option>
+                                    <option value="government">Government</option>
+                                    <option value="education">Education</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="energy">Energy & Utilities</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select 
+                                    name="position" 
+                                    id="id_position" 
+                                    class="bg-[#0f0f0f] border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#7839e9] focus:border-[#7839e9] w-full p-3 text-white"
+                                >
+                                    <option value="">Position</option>
+                                    <option value="ciso">CISO</option>
+                                    <option value="security_analyst">Security Analyst</option>
+                                    <option value="it_manager">IT Manager</option>
+                                    <option value="compliance_manager">Compliance Manager</option>
+                                    <option value="network_admin">Network Administrator</option>
+                                    <option value="security_consultant">Security Consultant</option>
+                                    <option value="cto">CTO</option>
+                                    <option value="ceo">CEO</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <textarea 
+                                name="message" 
+                                id="id_message" 
+                                rows="4" 
+                                placeholder="Message" 
+                                class="bg-[#0f0f0f] border border-gray-700 rounded-lg focus:ring-2 focus:ring-[#7839e9] focus:border-[#7839e9] w-full p-3 text-white"
+                                required
+                            ></textarea>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors text-lg"
+                        >
+                            CHECK NOW
+                        </button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+<script>
+// Cybersecurity Morphing SVG Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize morphing animation
+    const morphPath1 = document.getElementById('morph-path-1');
+    const morphPath2 = document.getElementById('morph-path-2');
+    
+    if (morphPath1 && morphPath2) {
+        // Cybersecurity-themed shape patterns
+        const securityShapes = [
+            // Shield shape
+            "150,30 250,80 230,180 150,230 70,180 50,80",
+            // Hexagon (honeycomb security)
+            "150,40 220,90 220,170 150,220 80,170 80,90",
+            // Diamond (data protection)
+            "150,50 200,100 200,150 150,200 100,150 100,100",
+            // Octagon (firewall)
+            "150,40 200,60 230,110 230,150 200,200 150,220 100,200 70,150 70,110 100,60",
+            // Star (threat detection)
+            "150,30 170,80 220,80 185,115 200,165 150,140 100,165 115,115 80,80 130,80",
+            // Pentagon (secure perimeter)
+            "150,40 210,100 180,180 120,180 90,100"
+        ];
+        
+        let currentShapeIndex = 0;
+        
+        function animateMorphing() {
+            currentShapeIndex = (currentShapeIndex + 1) % securityShapes.length;
+            const targetShape = securityShapes[currentShapeIndex];
+            
+            // Update target polygon
+            morphPath2.setAttribute('points', targetShape);
+            
+            // Animate morphing using Anime.js
+            anime({
+                targets: morphPath1,
+                points: [
+                    { value: targetShape }
+                ],
+                duration: 2000,
+                easing: 'easeInOutCubic',
+                complete: function() {
+                    setTimeout(animateMorphing, 1500);
+                }
+            });
+        }
+        
+        // Start morphing animation
+        setTimeout(animateMorphing, 2000);
+        
+        // Add pulsing animation to security icon
+        anime({
+            targets: '.security-icon circle',
+            scale: [1, 1.2, 1],
+            opacity: [0.8, 1, 0.8],
+            duration: 3000,
+            loop: true,
+            easing: 'easeInOutSine'
+        });
+        
+        // Animate network lines with cyber effect
+        anime({
+            targets: '.network-lines line',
+            strokeDasharray: ['0 100', '50 50', '100 0'],
+            duration: 4000,
+            loop: true,
+            delay: anime.stagger(500),
+            easing: 'easeInOutQuad'
+        });
+    }
+});
+
+// GSAP Hero Section Animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Create timeline
+    const tl = gsap.timeline();
+    
+    // Set initial states
+    gsap.set('.hero-badge', { opacity: 0, y: 30 });
+    gsap.set('.hero-title', { opacity: 0, y: 50 });
+    gsap.set('.hero-brand', { opacity: 0, scale: 0.8 });
+    gsap.set('.hero-description', { opacity: 0, y: 30 });
+    gsap.set('.hero-btn-primary, .hero-btn-secondary', { opacity: 0, y: 40 });
+    gsap.set('.hero-stat', { opacity: 0, y: 30, scale: 0.9 });
+    gsap.set('.hero-dashboard', { opacity: 0, x: 100 });
+    gsap.set('.dashboard-card', { opacity: 0, scale: 0.9, rotationY: 15 });
+    gsap.set('.dashboard-header', { opacity: 0, y: -20 });
+    gsap.set('.shield-container', { opacity: 0, scale: 0 });
+    gsap.set('.metric-card', { opacity: 0, y: 30, scale: 0.8 });
+    gsap.set('.metric-number', { scale: 0 });
+    
+    // Animate elements in sequence
+    tl.to('.hero-badge', { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: "power2.out" 
+    })
+    .to('.hero-title', { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1, 
+        ease: "power2.out" 
+    }, "-=0.4")
+    .to('.hero-brand', { 
+        opacity: 1, 
+        scale: 1, 
+        duration: 0.8, 
+        ease: "back.out(1.7)" 
+    }, "-=0.6")
+    .to('.hero-description', { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: "power2.out" 
+    }, "-=0.4")
+    .to('.hero-btn-primary', { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.6, 
+        ease: "power2.out" 
+    }, "-=0.4")
+    .to('.hero-btn-secondary', { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.6, 
+        ease: "power2.out" 
+    }, "-=0.5")
+    .to('.hero-stat', { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1, 
+        duration: 0.6, 
+        stagger: 0.2, 
+        ease: "back.out(1.7)" 
+    }, "-=0.3")
+    .to('.hero-dashboard', { 
+        opacity: 1, 
+        x: 0, 
+        duration: 1, 
+        ease: "power2.out" 
+    }, "-=0.8")
+    .to('.dashboard-card', { 
+        opacity: 1, 
+        scale: 1, 
+        rotationY: 0, 
+        duration: 0.8, 
+        ease: "power2.out" 
+    }, "-=0.6")
+    .to('.dashboard-header', { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.6, 
+        ease: "power2.out" 
+    }, "-=0.4")
+    .to('.shield-container', { 
+        opacity: 1, 
+        scale: 1, 
+        duration: 0.8, 
+        ease: "back.out(1.7)" 
+    }, "-=0.4")
+    .to('.metric-card', { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1, 
+        duration: 0.6, 
+        stagger: 0.1, 
+        ease: "back.out(1.7)" 
+    }, "-=0.6")
+    .to('.metric-number', { 
+        scale: 1, 
+        duration: 0.5, 
+        stagger: 0.1, 
+        ease: "back.out(1.7)" 
+    }, "-=0.4");
+    
+    // Continuous animations
+    gsap.to('.shield-icon', {
+        rotation: 360,
+        duration: 20,
+        repeat: -1,
+        ease: "none"
+    });
+    
+    gsap.to('.status-dot', {
+        scale: 1.2,
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut"
+    });
+    
+    // Floating animation for dashboard
+    gsap.to('.dashboard-card', {
+        y: -10,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut"
+    });
+    
+    // Hover animations for buttons
+    const primaryBtn = document.querySelector('.hero-btn-primary');
+    const secondaryBtn = document.querySelector('.hero-btn-secondary');
+    
+    if (primaryBtn) {
+        primaryBtn.addEventListener('mouseenter', function() {
+            gsap.to(this, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+        });
+        primaryBtn.addEventListener('mouseleave', function() {
+            gsap.to(this, { scale: 1, duration: 0.3, ease: "power2.out" });
+        });
+    }
+    
+    if (secondaryBtn) {
+        secondaryBtn.addEventListener('mouseenter', function() {
+            gsap.to(this, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+        });
+        secondaryBtn.addEventListener('mouseleave', function() {
+            gsap.to(this, { scale: 1, duration: 0.3, ease: "power2.out" });
+        });
+    }
+    
+    // Metric cards hover effect
+    const metricCards = document.querySelectorAll('.metric-card');
+    metricCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            gsap.to(this, { 
+                scale: 1.05, 
+                y: -5, 
+                duration: 0.3, 
+                ease: "power2.out" 
+            });
+        });
+        card.addEventListener('mouseleave', function() {
+            gsap.to(this, { 
+                scale: 1, 
+                y: 0, 
+                duration: 0.3, 
+                ease: "power2.out" 
+            });
+        });
+    });
+});
+</script>
+
+<style>
+@keyframes radial-scan {
+    0% { transform: rotate(0deg); opacity: 1; }
+    100% { transform: rotate(360deg); opacity: 0; }
+}
+
+.animate-radial-scan {
+    animation: radial-scan 2s linear infinite;
+}
+
+.virus-particles .particle {
+    animation: particle-float 3s infinite ease-in-out;
+}
+
+@keyframes particle-float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+}
+
+.cleanse-effect {
+    animation: cleanse-pulse 0.5s forwards;
+}
+
+.hover:hover .cleanse-effect {
+    animation: cleanse-pulse 0.5s forwards;
+}
+
+@keyframes cleanse-pulse {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+@keyframes shield-fill {
+    0% { clip-path: inset(100% 0 0 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes particle-flow {
+    0% { transform: translateY(-20px) rotate(30deg); opacity: 0; }
+    100% { transform: translateY(100px) rotate(30deg); opacity: 1; }
+}
+
+@keyframes particle-spin {
+    0% { transform: rotate(0deg) translateX(30px); }
+    100% { transform: rotate(360deg) translateX(30px); }
+}
+
+.animate-shield-fill {
+    animation: shield-fill 1s ease-out forwards;
+}
+
+.animate-particle-flow {
+    animation: particle-flow 2s linear infinite;
+}
+
+.animate-particle-spin {
+    animation: particle-spin 3s linear infinite;
+}
+
+.security-shield:hover .shield-glow {
+    animation: shield-pulse 1s infinite;
+}
+</style>
+
+
+
+                <!-- Add game initialization -->
+               

@@ -1,0 +1,664 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Aphelion Cyber Security{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/new logo.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/new logo.png' %}">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block meta_description %}Advanced Cybersecurity for the Digital Enterprise. Protect your organization with our comprehensive security platform.{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Aphelion Cyber Security - Advanced Protection for Enterprises{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Protect your organization with our comprehensive security platform. Detect, respond, and remediate threats before they impact your business.{% endblock %}">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <style>
+        /* Base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #f8fafc;
+        }
+
+        /* Orbital Animation */
+        .orbital-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1;
+            margin: auto;
+        }
+
+        .center-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(40px, 16%, 80px);
+            height: clamp(40px, 16%, 80px);
+            background: #7839e9;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 50%;
+        }
+
+        .orbit-1 { width: 40%; height: 40%; animation: rotate 20s linear infinite; }
+        .orbit-2 { width: 60%; height: 60%; animation: rotate 25s linear infinite reverse; }
+        .orbit-3 { width: 80%; height: 80%; animation: rotate 30s linear infinite; }
+
+        .orbital-icon {
+            position: absolute;
+            width: clamp(20px, 8%, 40px);
+            height: clamp(20px, 8%, 40px);
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .orbital-icon i {
+            font-size: 1.25rem;
+        }
+
+        .feature-label {
+            position: absolute;
+            background: rgba(99, 102, 241, 0.1);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Custom colors */
+        :root {
+            --color-primary: #141c2e;
+            --color-primary-light: #1e293b;
+            --color-secondary: #7839e9;
+            --color-secondary-dark: #7839e9;
+            --color-accent: #8b5cf6;
+            --color-accent-light: #a78bfa;
+            --color-dark: #0f0f0f;
+            --color-dark-light: #1e293b;
+        }
+
+        /* Gradients and effects */
+        .text-gradient {
+            background-image: linear-gradient(to right, #7839e9, #7839e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .bg-cyber-pattern {
+            background-image: radial-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .bg-gradient-cyber {
+            background: linear-gradient(125deg, #141c2e 0%, #0f0f0f 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.04);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        #particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        /* Cybersecurity Hero Animation */
+        .hero-animation-container {
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cyber-polygon {
+            fill: url(#cyberGradient); /* Apply the gradient */
+            stroke: #7839e9; /* Example stroke color */
+            stroke-width: 2;
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-4">
+                    <a href="{% url 'home' %}" class="flex items-center">
+                        <img src="{% static 'images/new logo.png' %}" alt="Aphelion Cyber" class="h-10 w-auto mr-3">
+                        <span class="text-2xl font-bold text-white">Aphelion<span class="text-[#7839e9]">Cyber</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <nav>
+                        <ul class="flex space-x-8">
+
+                            <li class="group relative">
+                                <button onclick="toggleDropdown('solutionsMenu')" class="text-gray-300 hover:text-white font-medium flex items-center">
+                                    Solutions
+                                    <i class="ri-arrow-down-s-line ml-1 text-gray-400 group-hover:text-secondary transition-colors"></i>
+                                </button>
+                                <div id="solutionsMenu" class="absolute left-0 top-full mt-2 w-64 hidden">
+                                    <div class="bg-[#1e293b] rounded-xl shadow-xl p-4 border border-gray-700">
+                                        <ul class="space-y-2">
+                                            <li><a href="{% url 'security' %}" class="block px-4 py-2 text-sm hover:bg-[#0f172a]/50 rounded-lg">Secutiry</a></li>
+                                            <li><a href="{% url 'compliance' %}" class="block px-4 py-2 text-sm hover:bg-[#0f172a]/50 rounded-lg">Compliance</a></li>
+                                            <li><a href="{% url 'policygenerator' %}" class="block px-4 py-2 text-sm hover:bg-[#0f172a]/50 rounded-lg">Policy Generator</a></li>
+                                            <!-- Replace the Device Management link with: -->
+                                            <li><a href="{% url 'user_management' %}" class="block px-4 py-2 text-sm hover:bg-[#0f172a]/50                                                                                                                                                                                      ">User Management</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="{% url 'pricing' %}" class="text-gray-300 hover:text-white font-medium">Pricing</a></li>
+                            <li><a href="{% url 'resources' %}" class="text-gray-300 hover:text-white font-medium">Resources</a></li>
+                            <li><a href="{% url 'company' %}" class="text-gray-300 hover:text-white font-medium">Company</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="{% url 'login' %}" class="text-gray-300 hover:text-white font-medium">Login</a>
+                    <a href="{% url 'contact' %}" class="bg-[#7839e9] hover:bg-[#7839e9] text-white font-medium px-6 py-2 rounded-lg transition-colors">
+                        Request Demo
+                    </a>
+                </div>
+
+                <button
+                    class="lg:hidden text-gray-300 hover:text-white"
+                    id="mobileMenuButton"
+                    aria-label="Toggle mobile menu"
+                >
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="lg:hidden hidden" id="mobileMenu">
+            <div class="px-4 py-5 space-y-4 bg-[#141c2e] border-t border-gray-700">
+                <!-- Platform Menu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu('mobilePlatformMenu')" class="flex items-center justify-between w-full py-2 text-gray-300 hover:text-white font-medium">
+                        <span>Platform</span>
+                        <i class="ri-arrow-down-s-line text-gray-400"></i>
+                    </button>
+                    <div id="mobilePlatformMenu" class="hidden pl-4 mt-2 space-y-2 border-l border-gray-700">
+                        <a href="#" class="block py-2 text-gray-400 hover:text-white">Risk Assessment</a>
+                        <a href="#" class="block py-2 text-gray-400 hover:text-white">Threat Detection</a>
+                        <a href="#" class="block py-2 text-gray-400 hover:text-white">Security Automation</a>
+                        <a href="#" class="block py-2 text-gray-400 hover:text-white">Compliance Management</a>
+                    </div>
+                </div>
+
+                <!-- Solutions Menu -->
+                <div>
+                    <button onclick="toggleMobileSubmenu('mobileSolutionsMenu')" class="flex items-center justify-between w-full py-2 text-gray-300 hover:text-white font-medium">
+                        <span>Solutions</span>
+                        <i class="ri-arrow-down-s-line text-gray-400"></i>
+                    </button>
+                    <div id="mobileSolutionsMenu" class="hidden pl-4 mt-2 space-y-2 border-l border-gray-700">
+                        <a href="{% url 'security' %}" class="block py-2 text-gray-400 hover:text-white">Security</a>
+                        <a href="{% url 'compliance' %}" class="block py-2 text-gray-400 hover:text-white">Compliance</a>
+                        <a href="#" class="block py-2 text-gray-400 hover:text-white">Policy Generator</a>
+                        <a href="#" class="block py-2 text-gray-400 hover:text-white">Device Management</a>
+                    </div>
+                </div>
+
+                <a href="{% url 'pricing' %}" class="block py-2 text-gray-300 hover:text-white font-medium">Pricing</a>
+                <a href="{% url 'resources' %}" class="block py-2 text-gray-300 hover:text-white font-medium">Resources</a>
+                <a href="{% url 'company' %}" class="block py-2 text-gray-300 hover:text-white font-medium">Company</a>
+                <div class="pt-4 space-y-3">
+                    <a href="{% url 'login' %}" class="block text-center text-gray-300 hover:text-white font-medium py-2">Login</a>
+                    <a href="{% url 'contact' %}" class="block text-center bg-[#7839e9] hover:bg-[#7839e9] text-white font-medium px-6 py-2 rounded-lg transition-colors">
+                        Request Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        <section class="relative bg-gradient-cyber h-screen flex items-center justify-center overflow-hidden">
+            <div class="container mx-auto px-4 md:px-6 text-center z-10">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 hero-title animate-fade-in">
+                    Fortify Your Digital Frontier.
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 hero-subtitle animate-fade-in-up">
+                    Aphelion Cyber provides advanced, AI-driven security solutions to protect your enterprise from evolving threats.
+                </p>
+                <div class="animate-fade-in-up delay-200">
+                    <a href="{% url 'contact' %}" class="bg-gradient-to-r from-[#7839e9] to-[#8b5cf6] hover:from-[#8b5cf6] hover:to-[#7839e9] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 hero-cta inline-block">
+                        Request a Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cybersecurity Hero Animation -->
+            <div class="hero-animation-container absolute bottom-0 left-0 right-0 w-full z-0">
+                <svg id="hero-svg" viewBox="0 0 304 112" class="w-full h-full">
+                    <defs>
+                        <linearGradient id="cyberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#7839e9;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon id="path-1" class="cyber-polygon" points="152,0 228,37.6 228,74.4 152,112 76,74.4 76,37.6"></polygon>
+                    <polygon id="path-2" class="cyber-polygon" points="152,0 228,37.6 228,74.4 152,112 76,74.4 76,37.6"></polygon>
+                </svg>
+            </div>
+
+            <!-- Particles Effect Container -->
+            <div id="particles"></div>
+        </section>
+
+        <!-- Other sections of the page would follow here -->
+
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#101728] py-12 mt-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="{% url 'home' %}" class="inline-block mb-6">
+                        <span class="text-2xl font-bold text-white">Aphelion<span class="text-[#7839e9]">Cyber</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Comprehensive cybersecurity solutions for the modern enterprise. Protecting your digital assets from evolving threats.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#0f0f0f] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                            <i class="ri-linkedin-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#0f0f0f] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                            <i class="ri-twitter-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#0f0f0f] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                            <i class="ri-facebook-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-[#0f0f0f] flex items-center justify-center hover:bg-[#7839e9]/20 transition-colors">
+                            <i class="ri-github-fill text-xl text-gray-300 hover:text-[#7839e9]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Platform</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Threat Detection</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Vulnerability Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Compliance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Risk Assessment</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Security Automation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Solutions</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Healthcare</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Financial Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Government</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Retail</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Enterprise</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Company</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Press</a></li>
+                        <li><a href="{% url 'contact' %}" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 mt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2023 Aphelion Cyber. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                this.innerHTML = '<i class="ri-close-line text-2xl"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                this.innerHTML = '<i class="ri-menu-line text-2xl"></i>';
+            }
+        });
+
+        //Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('bg-[#0f172a]/90', 'backdrop-blur-md', 'border-b', 'border-[#141c2e]/30');
+            } else {
+                navbar.classList.remove('bg-[#0f172a]/90', 'backdrop-blur-md', 'border-b', 'border-[#141c2e]/30');
+            }
+        });
+
+        // Particles effect
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            if (!particles) return;
+
+            // Clear any existing particles
+            particles.innerHTML = '';
+
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random size between 1-4px
+                const size = Math.random() * 3 + 1;
+
+                // Style the particle
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.background = i % 2 === 0 ? 'rgba(99, 102, 241, 0.4)' : 'rgba(139, 92, 246, 0.4)';
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animation = `pulse-glow ${(Math.random() * 2) + 2}s infinite ease-in-out`;
+
+                particles.appendChild(particle);
+            }
+        }
+
+        // Initialize particles if present
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles')) {
+                createParticles();
+                window.addEventListener('resize', createParticles);
+            }
+        });
+
+        // Smooth scroll function
+        function scrollToElement(elementId, offset = 100) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                const yPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: yPosition - offset,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Dropdown menus
+    function toggleDropdown(menuId) {
+        const menu = document.getElementById(menuId);
+        const allMenus = document.querySelectorAll('[id$="Menu"]');
+
+        // Close all other menus
+        allMenus.forEach(m => {
+            if (m.id !== menuId) {
+                m.classList.add('hidden');
+            }
+        });
+
+        // Toggle the clicked menu
+        menu.classList.toggle('hidden');
+    }
+
+
+    // Mobile submenu toggle
+    function toggleMobileSubmenu(menuId) {
+        const submenu = document.getElementById(menuId);
+        const arrow = event.currentTarget.querySelector('.ri-arrow-down-s-line');
+
+        if (submenu.classList.contains('hidden')) {
+            submenu.classList.remove('hidden');
+            arrow.style.transform = 'rotate(180deg)';
+        } else {
+            submenu.classList.add('hidden');
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    // GSAP Animations for Home Hero Section
+    document.addEventListener('DOMContentLoaded', function() {
+        // Target the hero section elements
+        const heroTitle = document.querySelector('.hero-title'); // Assuming you have a class for the title
+        const heroSubtitle = document.querySelector('.hero-subtitle'); // Assuming you have a class for the subtitle
+        const heroCta = document.querySelector('.hero-cta'); // Assuming you have a class for the CTA button
+
+        if (heroTitle) {
+            gsap.from(heroTitle, {
+                opacity: 0,
+                y: 50,
+                duration: 1.2,
+                ease: "power4.out"
+            });
+        }
+
+        if (heroSubtitle) {
+            gsap.from(heroSubtitle, {
+                opacity: 0,
+                y: 40,
+                duration: 1,
+                delay: 0.5,
+                ease: "power3.out"
+            });
+        }
+
+        if (heroCta) {
+            gsap.from(heroCta, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.8,
+                delay: 1.2,
+                ease: "power2.out"
+            });
+        }
+    });
+
+    // Cybersecurity Hero Animation with Anime.js
+    document.addEventListener('DOMContentLoaded', function() {
+        const svg = anime.path('#hero-svg path'); // Assuming you have a path element in your SVG
+        const $path1 = document.querySelector('#path-1');
+        const $path2 = document.querySelector('#path-2');
+
+        // Function to generate random points for the polygon
+        function generatePoints() {
+            const total = anime.random(4, 64);
+            const r1 = anime.random(4, 56);
+            const r2 = 56;
+            const isOdd = n => n % 2;
+            let points = '';
+            for (let i = 0, l = isOdd(total) ? total + 1 : total; i < l; i++) {
+                const r = isOdd(i) ? r1 : r2;
+                const a = (2 * Math.PI * i / l) - Math.PI / 2;
+                const x = 152 + anime.round(r * Math.cos(a), 0);
+                const y = 56 + anime.round(r * Math.sin(a), 0);
+                points += `${x},${y} `;
+            }
+            return points;
+        }
+
+        // Function to animate the random points
+        function animateRandomPoints() {
+            // Update the points attribute on #path-2
+            anime.set($path2, { points: generatePoints() });
+
+            // Morph the points of #path-1 into #path-2
+            anime($path1, {
+                points: anime.path($path2)(), // Use anime.path to get the path data
+                easing: 'easeInOutCirc',
+                duration: 1500, // Increased duration for smoother transition
+                complete: animateRandomPoints
+            });
+        }
+
+        // Start the animation if the elements exist
+        if ($path1 && $path2) {
+            animateRandomPoints();
+        }
+    });
+
+
+    </script>
+
+
+    {% endblock %}
+</body>
+</html>
+
+<style>
+    /* Add this to your existing styles */
+    .trusted-organizations {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .scroll-container {
+        display: flex;
+        animation: scroll 20s linear infinite;
+        width: max-content;
+    }
+
+    .scroll-container:hover {
+        animation-play-state: paused;
+    }
+
+    .org-item {
+        flex: 0 0 auto;
+        margin-right: 24px;
+        min-width: 150px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Fade-in animations for hero section */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+
+</style>
+
+</body>
+</html>
